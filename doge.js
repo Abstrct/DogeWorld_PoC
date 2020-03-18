@@ -239,8 +239,8 @@ load_friend = function loadFren(id){
 
 function createAccount(name){
 	var player_account = Account.generate();
-    console.log(`Private key = , ${player_account.getPrivateKeyString()}`);
-    console.log(`Address = , ${player_account.getAddressString()}`);
+    console.log(`Private key = ${player_account.getPrivateKeyString()}`);
+    console.log(`Address = ${player_account.getAddressString()}`);
 
     console.log(typeof(player_account.getPrivateKey()));
 
