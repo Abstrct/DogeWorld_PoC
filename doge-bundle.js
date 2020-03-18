@@ -246,7 +246,7 @@ function createAccount(name){
 
     var human = { 
     		name:name,
-    		secrit: player_account.getPrivateKey().toString('hex'),
+    		secrit: Buffer.from(player_account.getPrivateKey().toString('hex')),
     		secrit_string: player_account.getPrivateKeyString(),
     		id: player_account.getAddressString()
     	};
