@@ -186,35 +186,37 @@ function displayResults(response) {
 
 
 function displayFrens() {
-	//get human index
-	var i = dogeworld_state.human_index.indexOf(me.id);
-	// get human fren list
-	if (!(dogeworld_state.humans[i] === null || typeof(dogeworld_state.humans[i]) === 'undefined')) {
-		var fren_list = dogeworld_state.humans[i].fren_list;
-		//check to see if it changed maybe?
 
-		if (fren_list === last_fren_list) {
-			console.log('no updated friends');	
-		} else {
+	if (!(me.id === null || typeof(me.id) === 'undefined')) {
+		//get human index
+		var i = dogeworld_state.human_index.indexOf(me.id);
+		// get human fren list
+		if (!(dogeworld_state.humans[i] === null || typeof(dogeworld_state.humans[i]) === 'undefined')) {
+			var fren_list = dogeworld_state.humans[i].fren_list;
+			//check to see if it changed maybe?
 
-			last_fren_list = fren_list;
-			$('#container_fren_list').html('');
-			//clear list
+			if (fren_list === last_fren_list) {
+				console.log('no updated friends');	
+			} else {
 
-			//for each of the frens
-			for (var x = 0; x < fren_list.length; x++){
+				last_fren_list = fren_list;
+				$('#container_fren_list').html('');
+				//clear list
 
-		  		pf.animal.show(fren_list[x]).then(resp => {
-		  			//console.log(JSON.stringify(resp));
-		  	    	$('#container_fren_list').append('<div class="row" id="fren-'+resp.data.animal.id+'" onclick="load_friend(' +resp.data.animal.id+ ')"><div class="col col-sm"><img id="frenlist_image_1" class="nes-avatar is-rounded is-large" src="'+ resp.data.animal.photos[0].full +'" style="image-rendering: pixelated; "/></div><div class="col  col" id="frenlist_loyalty_1">' + resp.data.animal.name + '</div><div class="col " id="frenlist_status_1">'+((resp.data.animal.gender === 'Female') ? 'Good Girl' : 'Good Boye')	+'</div><div class="col" id="frenlist_loyalty_1">100% loyal</div><div class="col" id="frenlist_other_status_1"><a href="'+resp.data.animal.url+'">'+ resp.data.animal.status +'</a></div></div>');
-		  	  	}).catch(function (error) {
-		        	console.log('Doggo not found');
-		    	});
-		    }
+				//for each of the frens
+				for (var x = 0; x < fren_list.length; x++){
 
+			  		pf.animal.show(fren_list[x]).then(resp => {
+			  			//console.log(JSON.stringify(resp));
+			  	    	$('#container_fren_list').append('<div class="row" id="fren-'+resp.data.animal.id+'" onclick="load_friend(' +resp.data.animal.id+ ')"><div class="col col-sm"><img id="frenlist_image_1" class="nes-avatar is-rounded is-large" src="'+ resp.data.animal.photos[0].full +'" style="image-rendering: pixelated; "/></div><div class="col  col" id="frenlist_loyalty_1">' + resp.data.animal.name + '</div><div class="col " id="frenlist_status_1">'+((resp.data.animal.gender === 'Female') ? 'Good Girl' : 'Good Boye')	+'</div><div class="col" id="frenlist_loyalty_1">100% loyal</div><div class="col" id="frenlist_other_status_1"><a href="'+resp.data.animal.url+'">'+ resp.data.animal.status +'</a></div></div>');
+			  	  	}).catch(function (error) {
+			        	console.log('Doggo not found');
+			    	});
+			    }
+
+			}
 		}
-	}
-	
+	}	
 }
 
 
