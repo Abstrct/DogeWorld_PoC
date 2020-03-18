@@ -372,7 +372,7 @@ function loadKey(the_key){
 lotion_refresh = async function lotion_refresh(){
 	let { state, send } = await connect(null, { 
   		genesis: require('./genesis.json'),
-  		nodes: [ 'ws://localhost:62130' ]
+  		nodes: [ 'ws://localhost:65158' ]
 	});
 
 	console.log(await state.count); 
@@ -402,8 +402,8 @@ function setSend(new_send){
 }).call(this,require("buffer").Buffer)
 },{"./genesis.json":2,"bip32":35,"bip39":37,"buffer":374,"ethereumjs-tx":123,"ethereumjs-util":129,"ethereumjs-wallet":132,"json-stringify-deterministic":155,"lotion-connect":175,"sha.js":246,"store":255}],2:[function(require,module,exports){
 module.exports={
-  "genesis_time": "2020-03-18T05:45:07.425584Z",
-  "chain_id": "test-chain-MOV2zO",
+  "genesis_time": "2020-03-18T21:30:50.072988Z",
+  "chain_id": "test-chain-HEgRW7",
   "consensus_params": {
     "block": {
       "max_bytes": "22020096",
@@ -421,10 +421,10 @@ module.exports={
   },
   "validators": [
     {
-      "address": "0E42AF20E9F8635603DB5A47A3CC10073A75480B",
+      "address": "BD91D0A945865D32C7A2335F2EA682D6D21C4CEA",
       "pub_key": {
         "type": "tendermint/PubKeyEd25519",
-        "value": "9lGOLLSSRKpyT8Ap32kgnMM8MMI2ZTm4pZPEzKAaz/M="
+        "value": "JbZJffAkTPZgKenT7yPktbSvqPEz1XV1Fs0/xyiznj0="
       },
       "power": "10",
       "name": ""

@@ -370,7 +370,7 @@ function loadKey(the_key){
 lotion_refresh = async function lotion_refresh(){
 	let { state, send } = await connect(null, { 
   		genesis: require('./genesis.json'),
-  		nodes: [ 'ws://localhost:62130' ]
+  		nodes: [ 'ws://localhost:65158' ]
 	});
 
 	console.log(await state.count); 
