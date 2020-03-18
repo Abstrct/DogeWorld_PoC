@@ -189,7 +189,7 @@ function displayResults(response) {
 
 function displayFrens() {
 
-	if (!(me.id === null || typeof(me.id) === 'undefined')) {
+	if (!(me === null || typeof(me) === 'undefined')) {
 		//get human index
 		var i = dogeworld_state.human_index.indexOf(me.id);
 		// get human fren list
@@ -248,7 +248,7 @@ function createAccount(name){
 
     var human = { 
     		name:name,
-    		secrit: Buffer.from(player_account.getPrivateKey()),
+    		secrit: Buffer.from(player_account.getPrivateKey().toString('hex')),
     		secrit_string: player_account.getPrivateKeyString(),
     		id: player_account.getAddressString()
     	};
