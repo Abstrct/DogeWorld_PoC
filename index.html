@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		
+		<link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
+		<link href="style.css" rel="stylesheet"/>
+		
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
+
+		<script src="doge-bundle.js"></script>
+
+		<script src='js/qrcode.min.js'></script>
+		
+	</head>
+	<body>
+		<div class="container">
+        	<main class="main-content">
+	        	<section class="topic">
+					<h2 id="about"><a href="#about">#</a>Doge World</h2>
+					<p>I'd pet that dog. </p>
+          		</section>
+				<section class="topic">
+					<section class="schowcase">
+						<div class="nes-container with-title " style="height: 350px">
+							<p class="title  is-error is-centered"><img src="images/bone.png" class='nes-avatar is-small' style="margin-right:10px" /> <span id="doggoviewer_name">Calling doggo...</span> <img src="images/bone.png" class='nes-avatar is-small' style="margin-left:10px" /></p>
+
+							<div style="float:left;height: 264px" >
+							<img id='doggoviewer_image' class='nes-avatar is-rounded is-large is-xlarge' src='images/yesthisisdog.jpg' style='image-rendering: pixelated; '/>
+							</div>
+
+							<div class="container">
+
+							  <div class="row">
+							    <div class="col-4" style="text-align: right; color:grey;">ID:</div>								  
+							    <div class="col" id="doggoviewer_id" style="color:grey;">
+							      ...
+							    </div>
+
+							  </div>
+							  <div class="row">
+							    <div class="col-4" style="text-align: right">Class:</div>								  
+							    <div class="col" id="doggoviewer_class">
+							      ...
+							    </div>
+
+							  </div>
+							  <div class="row">
+							    <div class="col-4" style="text-align: right">Age:</div>								  
+							    <div class="col" id="doggoviewer_age">
+							      ...
+							    </div>
+
+							  </div>
+							  <div class="row">
+							    <div class="col-4" style="text-align: right">Status:</div>
+							    <div class="col" id="doggoviewer_gender">
+							      ...
+							    </div>
+							  </div>
+
+							  <div class="row">
+							    <div class="col-4" style="text-align: right">Location:</div>
+							    <div class="col" id="doggoviewer_location">
+							      ...
+							    </div>
+							  </div>
+
+							  <div class="row">
+							    <div class="col-4" style="text-align: right"></div>
+							    <div class="col"></div>
+							  </div>
+
+							  <div class="row">
+							    <div class="col-4" style="text-align: right">Loyalty:</div>
+							    <div class="col" id="doggoviewer_loyalty">
+							      ...
+							    </div>
+							  </div>
+
+
+							</div>
+
+							<div class="container" style="padding-top:20px">
+							  <div class="row justify-content-md-center">
+
+							  	<div class="col  col-lg-auto">
+							  		<button type="button" class="nes-btn is-success" id="button_pet">Pet This Dog</button>
+							  	</div>
+
+								<div class="col  col-lg-auto">
+							  		<button type="button" class="nes-btn is-disabled" id="button_understand">Give Treat (<span id='human_treat_inventory'>0</span>)</button>
+							  	</div>
+
+								<div class="col  col-lg-auto">
+							  		<button type="button" class="nes-btn is-error" id="button_next">Next &gt;</button>
+							  	</div>
+
+							  </div>
+							</div>
+						</div>
+					</section>
+
+
+	
+
+					<section class="showcase">
+						<section class="nes-container with-title">
+							<p class="title">Frens</p>
+								<div class="container" id='container_fren_list'>
+
+		
+								</div>
+						</section>
+					</section>
+				</section>
+				<section class="topic">
+	         		<section class="schowcase">
+						<div class="nes-container with-title " >
+							<p class="title  is-error is-centered"> <span id="human_login_status">Logging In...</span> </p>
+							<div class="container">
+								<div class='row'>
+									<div class='col' id="human_menu"  hidden="true" style='text-align: right;'>
+										<div class="nes-field is-inline">
+											  <label for="name_field">Name</label>
+											  <input type="text" id="name_field" class="nes-input is-success" placeholder="Fren">
+											</div>
+									</div>
+									<div class='col' id="human_name" > No account found, creating... </div>
+
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+
+
+			</main>
+		</div>
+
+	</body>
+</html>
